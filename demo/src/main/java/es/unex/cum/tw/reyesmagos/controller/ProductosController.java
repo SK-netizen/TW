@@ -95,7 +95,7 @@ public class ProductosController extends HttpServlet {
 
         } catch (SQLException e2) {
             res.sendRedirect("WEB-INF/Principal.jsp?mensaje=Error en la consulta. Hable con administrador");
-        } finally {
+        }finally {
             // Se cierra resultSet
             if (resultados != null) {
                 try {

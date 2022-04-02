@@ -8,29 +8,23 @@
     <link rel="stylesheet" type="text/css" href="css/CSS.css"/>
 </head>
 <body>
-<%
-    if (session.getAttribute("Nombre") == null) {
+<% if (session.getAttribute("Nombre") == null) {
         response.sendRedirect("Principal.jsp");
-    } else {
-%>
+    } else { %>
 <%@ include file="../Cabecera.html" %>
 <div id="contenedor">
     <jsp:include page="../Menu_Autenticado.jsp"/>
     <div id="Content">
-        <%
-            Producto p = (Producto) request.getAttribute("producto");
+        <% Producto p = (Producto) request.getAttribute("producto");
             if (p == null) {
                 response.sendRedirect("WEB-INF/Principal.jsp?mensaje=Error con el producto");
             } else {
                 String image="./img/"+p.getPathImagen();
-        %>
-
-        <img src=<%=image%> alt='Imagen_ddfasdfloductsadfo'>
-        <%
-            }
-        %>
+                String alt = "Imagen del producto "+p.getNombreProd(); %>
+        <img src=<%=image%> alt=<%=alt%>>
+        <% } %>
     </div>
 </div>
-<%} %>
+<% } %>
 </body>
 </html>
