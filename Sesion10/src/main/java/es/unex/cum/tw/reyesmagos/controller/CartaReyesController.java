@@ -8,14 +8,16 @@ import es.unex.cum.tw.reyesmagos.model.Carta;
 import es.unex.cum.tw.reyesmagos.service.CartaService;
 import es.unex.cum.tw.reyesmagos.service.CartaServiceBD;
 import es.unex.cum.tw.reyesmagos.service.CartaServiceMemory;
-import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 
 /**
  * Servlet implementation class Configuracion
@@ -27,7 +29,7 @@ public class CartaReyesController extends HttpServlet {
 	private DataSource servicioConexiones = null;*/
 
 	//private CartaService c= new CartaServiceMemory();
-	private CartaService c= new CartaServiceMemory();
+	private CartaService c= new CartaServiceBD();
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 	}

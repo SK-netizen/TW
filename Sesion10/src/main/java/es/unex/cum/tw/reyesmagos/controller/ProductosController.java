@@ -6,14 +6,17 @@ import java.util.List;
 
 import es.unex.cum.tw.reyesmagos.model.Producto;
 import es.unex.cum.tw.reyesmagos.service.ProductoService;
+import es.unex.cum.tw.reyesmagos.service.ProductoServiceBD;
 import es.unex.cum.tw.reyesmagos.service.ProductoServiceMemory;
-import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 
 /**
  * Servlet implementation class Configuracion
@@ -25,7 +28,7 @@ public class ProductosController extends HttpServlet {
 	 * private DataSource servicioConexiones = null;
 	 */
 	//private ProductoService s = new ProductoServiceMemory();
-	private ProductoService s = new ProductoServiceMemory();
+	private ProductoService s = new ProductoServiceBD();
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {

@@ -4,14 +4,17 @@ import java.io.IOException;
 
 import es.unex.cum.tw.reyesmagos.model.Usuario;
 import es.unex.cum.tw.reyesmagos.service.UsuarioService;
+import es.unex.cum.tw.reyesmagos.service.UsuarioServiceBD;
 import es.unex.cum.tw.reyesmagos.service.UsuarioServiceMemory;
-import jakarta.servlet.ServletConfig;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 
 /**
  * Ejemplo de uso de Pool de conexiones con una BD con servlet. Importante se
@@ -23,7 +26,7 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet("/UsuarioController")
 public class UsuarioController extends HttpServlet {
 	//private UsuarioService userService = new UsuarioServiceMemory();
-	private UsuarioService userService = new UsuarioServiceMemory();
+	private UsuarioService userService = new UsuarioServiceBD();
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 	}
